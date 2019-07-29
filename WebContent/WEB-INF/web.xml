@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>weixinWeb</display-name>
+  
+  	<context-param>   
+      <param-name>appId</param-name>  
+      <param-value>wx8e98f9d9dfe6a909</param-value>  
+    </context-param>  
+    <context-param>  
+      <param-name>appSecret</param-name>  
+      <param-value>870238e25d265eefc629bebe8eedf5e1</param-value>  
+    </context-param>  
+    
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <servlet>
+        <servlet-name>weChatServlet</servlet-name>
+        <servlet-class>wechat.servlet.WeChatAccounts</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>weChatServlet</servlet-name>
+        <url-pattern>/weChatServlet</url-pattern> <!--url-pattern必须与servlet-name一致-->
+    </servlet-mapping>
+    	
+    <servlet>
+        <servlet-name>accessTokenServlet</servlet-name>
+        <servlet-class>accessToken.AccessTokenServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>accessTokenServlet</servlet-name>
+        <url-pattern>/accessTokenServlet</url-pattern> <!--url-pattern必须与servlet-name一致-->
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>uploadMediaServlet</servlet-name>
+        <servlet-class>wechat.servlet.UploadMediaServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>uploadMediaServlet</servlet-name>
+        <url-pattern>/uploadMediaServlet</url-pattern> <!--url-pattern必须与servlet-name一致-->
+    </servlet-mapping>
+</web-app>
+
